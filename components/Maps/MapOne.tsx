@@ -2,6 +2,7 @@
 import React from "react";
 import { VectorMap } from "@react-jvectormap/core";
 import { usAea } from "@react-jvectormap/unitedstates";
+import { inMerc } from "@react-jvectormap/india";
 
 const MapOne = () => {
   return (
@@ -11,7 +12,7 @@ const MapOne = () => {
       </h4>
       <div id="mapOne" className="mapOne map-btn h-90">
         <VectorMap
-          map={usAea}
+          map={inMerc}
           backgroundColor="white"
           regionStyle={{
             initial: {
