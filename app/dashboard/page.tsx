@@ -143,21 +143,18 @@ const Dashboard: React.FC = () => {
           </h4>
         </div>
 
-      <div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+      <div className="grid grid-cols-5 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
         <div className="col-span-3 flex items-center">
           <p className="font-medium">Type</p>
         </div>
         <div className="col-span-2 hidden items-center sm:flex">
           <p className="font-medium">Price</p>
         </div>
-        <div className="col-span-1 flex items-center">
+        <div className="col-span-2 flex items-center">
           <p className="font-medium">Max Slots</p>
         </div>
         <div className="col-span-1 flex items-center">
           <p className="font-medium">Available Slots</p>
-        </div>
-        <div className="col-span-1 flex items-center">
-          <p className="font-medium">Profit</p>
         </div>
       </div>
 
@@ -186,7 +183,7 @@ const Dashboard: React.FC = () => {
               {parkingInfo.price}
             </p>
           </div>
-          <div className="col-span-1 flex items-center">
+          <div className="col-span-2 flex items-center">
             <p className="text-sm text-black dark:text-white">
               ${parkingInfo.Max_Slots}
             </p>
@@ -194,23 +191,9 @@ const Dashboard: React.FC = () => {
           <div className="col-span-1 flex items-center">
             <p className="text-sm text-black dark:text-white">{parkingInfo.Available_Slots}</p>
           </div>
-          {/* <div className="col-span-1 flex items-center">
-            <p className="text-sm text-meta-3">${parkingInfo.profit}</p>
-          </div> */}
         </div>
       ))}
     </div>
-
-      {/* <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-        <ChartOne />
-        <ChartTwo />
-        <ChartThree />
-        <MapOne />
-        <div className="col-span-12 xl:col-span-8">
-          <TableOne />
-        </div>
-        <ChatCard />
-      </div> */}
     </>
   );
 };
