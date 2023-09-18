@@ -79,22 +79,11 @@ const data = [
 const People = () => {
   return (
     <>
-      <Breadcrumb pageName="Tables" />
-
       <div className="flex flex-col gap-10">
         <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
           <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
             Parking Name
           </h4>
-          <Link
-                href="#"
-                className="inline-flex items-center justify-center gap-2.5 bg-primary py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10 mb-5"
-            >
-                <span>
-                    <BsPlusSquare />
-                </span>
-                Add Parking
-            </Link>
 
           <div className="flex flex-col">
             <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-6">
