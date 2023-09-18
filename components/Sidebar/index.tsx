@@ -113,8 +113,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
                 <SidebarLink Icon={RxDashboard} title={"Dash Board"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Set Configuration"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Parking Slots"} href={"/"} currentPath={pathname}  />
+                <SidebarLink Icon={RxDashboard} title={"Set Configuration"} href={"/set_configurations"} currentPath={pathname}  />
+                <SidebarLink Icon={RxDashboard} title={"Parking Slots"} href={"/parkingSlot"} currentPath={pathname}  />
                 <SidebarLink Icon={BiSolidParking} title={"Parkings"} href={"/parking"} currentPath={pathname}  />
                 <SidebarLink Icon={RxDashboard} title={"Reports"} href={"/"} currentPath={pathname}  />
                 <SidebarLink Icon={RxDashboard} title={"People"} href={"/peoples"} currentPath={pathname}  />
