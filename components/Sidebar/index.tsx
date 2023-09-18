@@ -13,6 +13,7 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { AiOutlineForm, AiOutlineCar } from "react-icons/ai";
 import Buttons from "@/app/ui/buttons/page";
+import { MdLiveTv } from "react-icons/md";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -115,10 +116,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
+            <SidebarLink
+                Icon={MdLiveTv}
+                title={"Live"}
+                href={"/"}
+                currentPath={pathname}
+              />
               <SidebarLink
                 Icon={RxDashboard}
                 title={"Dashboard"}
-                href={"/"}
+                href={"/dashboard"}
                 currentPath={pathname}
               />
               <SidebarLink
