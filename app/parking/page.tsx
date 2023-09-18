@@ -107,8 +107,8 @@ const TableOne = () => {
         Add Parking
       </Link>
 
-      <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+      <div className="flex flex-col overflow-x-auto">
+        <div className="grid rounded-sm bg-gray-2 dark:bg-meta-4 grid-cols-5 ">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Parking ID
@@ -124,12 +124,12 @@ const TableOne = () => {
               Total Slots
             </h5>
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="p-2.5 text-center sm:block xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Empty Slots
             </h5>
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="p-2.5 text-center sm:block xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Pricing
             </h5>
@@ -138,7 +138,7 @@ const TableOne = () => {
 
         {parkingData.map((parking, key) => (
           <div
-            className={`grid grid-cols-3 sm:grid-cols-5 ${
+            className={`grid grid-cols-5 ${
               key === parkingData.length - 1
                 ? ""
                 : "border-b border-stroke dark:border-strokedark"
@@ -149,7 +149,7 @@ const TableOne = () => {
               {/* <div className="flex-shrink-0">
                 <Image src={brand.logo} alt="Brand" width={48} height={48} />
               </div> */}
-              <p className="hidden text-black dark:text-white sm:block">
+              <p className="text-black dark:text-white sm:block">
                 {parking.id}
               </p>
             </div>
@@ -164,11 +164,11 @@ const TableOne = () => {
               </p>
             </div>
 
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+            <div className="items-center justify-center p-2.5 sm:flex xl:p-5">
               <p className=" text-meta-3">{parking.empty_slots}</p>
             </div>
 
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+            <div className="items-center justify-center p-2.5 sm:flex xl:p-5">
               <p className="text-meta-5">₹{parking.avg_pricing}</p>
             </div>
           </div>

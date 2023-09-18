@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import TableFour from "@/components/Tables/TableFour";
 import TableOne from "@/components/Tables/TableOne";
 import TableThree from "@/components/Tables/TableThree";
 import TableTwo from "@/components/Tables/TableTwo";
@@ -22,6 +23,18 @@ const TablesPage = () => {
 
       <div className="flex flex-col gap-10">
         <TableOne />
+      </div>
+
+      <div className="flex flex-col gap-10">
+        <TableTwo />
+      </div>
+
+      <div className="flex flex-col gap-10">
+        <TableThree />
+      </div>
+
+      <div className="flex flex-col gap-10">
+        <TableFour />
       </div>
     </>
   );

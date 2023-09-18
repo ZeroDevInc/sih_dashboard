@@ -112,17 +112,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-                <SidebarLink Icon={RxDashboard} title={"Dashboard"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Users"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Groups"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Categories"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Rates"} href={"/"} currentPath={pathname}  />
+                <SidebarLink Icon={RxDashboard} title={"Dash Board"} href={"/"} currentPath={pathname}  />
+                <SidebarLink Icon={RxDashboard} title={"Set Configuration"} href={"/"} currentPath={pathname}  />
                 <SidebarLink Icon={RxDashboard} title={"Parking Slots"} href={"/"} currentPath={pathname}  />
                 <SidebarLink Icon={BiSolidParking} title={"Parkings"} href={"/parking"} currentPath={pathname}  />
                 <SidebarLink Icon={RxDashboard} title={"Reports"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Company Info"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"People"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Setting"} href={"/"} currentPath={pathname}  />
+                <SidebarLink Icon={RxDashboard} title={"People"} href={"/peoples"} currentPath={pathname}  />
+    
                 <SidebarLink Icon={RxDashboard} title={"Logout"} href={"/"} currentPath={pathname}  />
             </ul>
           </div>

@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   // other metadata
 };
 
+
 const SignUp: React.FC = () => {
+
+    const handleSubmit = ()=>{
+      console.log("hi");
+    }
+
   return (
     <>
       <Breadcrumb pageName="Sign Up" />
