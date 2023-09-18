@@ -14,6 +14,8 @@ import { FiLogOut } from "react-icons/fi";
 import { AiOutlineForm, AiOutlineCar } from "react-icons/ai";
 import Buttons from "@/app/ui/buttons/page";
 import { MdLiveTv } from "react-icons/md";
+import { RiCreativeCommonsZeroFill } from "react-icons/ri";
+import { FcOrgUnit } from "react-icons/fc";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -76,12 +78,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <Link href="/">
-          <Image
-            width={176}
-            height={32}
-            src={"/images/logo/logo.svg"}
-            alt="Logo"
-          />
+          <h1 className=" text-2xl font-extrabold flex justify-center items-center gap-2 "><FcOrgUnit className=" text-7xl " /> ZeroDevInc's PMS</h1>
         </Link>
 
         <button
