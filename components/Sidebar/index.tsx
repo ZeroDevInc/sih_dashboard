@@ -5,9 +5,14 @@ import SidebarLinkGroup from "./SidebarLinkGroup";
 import Image from "next/image";
 import SidebarLink from "../SidebarLink";
 
-import {RxDashboard} from "react-icons/rx"; 
+import { RxDashboard } from "react-icons/rx";
 import { BiSolidParking } from "react-icons/bi";
-
+import { GrConfigure } from "react-icons/gr";
+import { PiChartLineUpBold } from "react-icons/pi";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { FiLogOut } from "react-icons/fi";
+import { AiOutlineForm, AiOutlineCar } from "react-icons/ai";
+import Buttons from "@/app/ui/buttons/page";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -103,33 +108,61 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       {/* <!-- SIDEBAR HEADER --> */}
 
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
-        {/* <!-- Sidebar Menu --> */}
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
-          {/* <!-- Menu Group --> */}
           <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               MENU
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-                <SidebarLink Icon={RxDashboard} title={"Dash Board"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Set Configuration"} href={"/set_configurations"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Parking Slots"} href={"/parkingSlot"} currentPath={pathname}  />
-                <SidebarLink Icon={BiSolidParking} title={"Parkings"} href={"/parking"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"Reports"} href={"/"} currentPath={pathname}  />
-                <SidebarLink Icon={RxDashboard} title={"People"} href={"/peoples"} currentPath={pathname}  />
-    
-                <SidebarLink Icon={RxDashboard} title={"Logout"} href={"/"} currentPath={pathname}  />
+              <SidebarLink
+                Icon={RxDashboard}
+                title={"Dashboard"}
+                href={"/"}
+                currentPath={pathname}
+              />
+              <SidebarLink
+                Icon={AiOutlineForm}
+                title={"Set Configuration"}
+                href={"/set_configurations"}
+                currentPath={pathname}
+              />
+              <SidebarLink
+                Icon={AiOutlineCar}
+                title={"Parking Slots"}
+                href={"/parking-slots"}
+                currentPath={pathname}
+              />
+              <SidebarLink
+                Icon={BiSolidParking}
+                title={"Parkings"}
+                href={"/parking"}
+                currentPath={pathname}
+              />
+              <SidebarLink
+                Icon={PiChartLineUpBold}
+                title={"Reports"}
+                href={"/reports"}
+                currentPath={pathname}
+              />
+              <SidebarLink
+                Icon={BsFillPeopleFill}
+                title={"People"}
+                href={"/peoples"}
+                currentPath={pathname}
+              />
+              {/* <SidebarLink Icon={FiLogOut} title={"Logout"} href={"/"} currentPath={pathname}  /> */}
+              <li>
+                <div
+                  className={`group hover:cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4`}
+                >
+                  <FiLogOut />
+                  Logout
+                </div>
+              </li>
             </ul>
           </div>
-          {/* <!-- Others Group --> */}
-          <div>
-            {/* <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
-              OTHERS
-            </h3> */}
-          </div>
         </nav>
-        {/* <!-- Sidebar Menu --> */}
       </div>
     </aside>
   );
