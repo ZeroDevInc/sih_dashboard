@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "6506e152ecb72df5bb85ccd6"
+  },
+  "vehicle_number": "hr245",
+  "vehicle_type": 0,
+  "start_time": 43,
+  "end_time": 400,
+  "slot_number": 4
+}
