@@ -1,6 +1,9 @@
 "use client";
+
+import TableTwo from "@/components/Tables/TableTwo";
 import React from "react";
 import CardDataStats from "../../components/CardDataStats";
+import Image from "next/image";
 // import Map from "../Maps/TestMap";
 
 // without this the component renders on server and throws an error
@@ -9,10 +12,43 @@ const MapOne = dynamic(() => import("../../components/Maps/MapOne"), {
   ssr: false,
 });
 
+import CarImg from '../../public/images/vechicles/Car2.png'
+import BikeImg from '../../public/images/vechicles/bike.png'
+import TruckImg from '../../public/images/vechicles/truck.png'
+
+
 const Dashboard: React.FC = () => {
+
+  const parking = [
+    {
+      imageSrc: BikeImg,
+      type: "Bike",
+      price: 130,
+      Max_Slots: 25,
+      Available_Slots: 13 
+    },
+    {
+      imageSrc: CarImg,
+      type: "Car",
+      price: 130,
+      Max_Slots: 25,
+      Available_Slots: 13 
+    },
+    {
+      imageSrc: TruckImg,
+      type: "Truck",
+      price: 130,
+      Max_Slots: 25,
+      Available_Slots: 13 
+    }
+  ]
+
+  const fetchParkingDetails = () =>{
+      // fetching from backend API
+  }
+
   return (
     <>
-
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardDataStats title="Total views" total="$3.456K" rate="0.43%" levelUp>
           <svg
@@ -99,6 +135,71 @@ const Dashboard: React.FC = () => {
           </svg>
         </CardDataStats>
       </div>
+
+      <div className="mt-4 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+        <div className="py-6 px-4 md:px-6 xl:px-7.5">
+          <h4 className="text-xl font-semibold text-black dark:text-white">
+            Parking Name
+          </h4>
+        </div>
+
+      <div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+        <div className="col-span-3 flex items-center">
+          <p className="font-medium">Type</p>
+        </div>
+        <div className="col-span-2 hidden items-center sm:flex">
+          <p className="font-medium">Price</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">Max Slots</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">Available Slots</p>
+        </div>
+        <div className="col-span-1 flex items-center">
+          <p className="font-medium">Profit</p>
+        </div>
+      </div>
+
+      {parking.map((parkingInfo, key) => (
+        <div
+          className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5"
+          key={key}
+        >
+          <div className="col-span-3 flex items-center">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="h-12.5 w-15 rounded-md">
+                <Image
+                  src={parkingInfo.imageSrc}
+                  width={60}
+                  height={50}
+                  alt="Product"
+                />
+              </div>
+              <p className="text-sm text-black dark:text-white">
+                {parkingInfo.type}
+              </p>
+            </div>
+          </div>
+          <div className="col-span-2 hidden items-center sm:flex">
+            <p className="text-sm text-black dark:text-white">
+              {parkingInfo.price}
+            </p>
+          </div>
+          <div className="col-span-1 flex items-center">
+            <p className="text-sm text-black dark:text-white">
+              ${parkingInfo.Max_Slots}
+            </p>
+          </div>
+          <div className="col-span-1 flex items-center">
+            <p className="text-sm text-black dark:text-white">{parkingInfo.Available_Slots}</p>
+          </div>
+          {/* <div className="col-span-1 flex items-center">
+            <p className="text-sm text-meta-3">${parkingInfo.profit}</p>
+          </div> */}
+        </div>
+      ))}
+    </div>
 
       {/* <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
         <ChartOne />

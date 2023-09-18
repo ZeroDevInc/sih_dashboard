@@ -131,6 +131,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 href={"/set_configurations"}
                 currentPath={pathname}
               />
+                <SidebarLink
+                  Icon={BsFillPeopleFill}
+                  title={"Bookings"}
+                  href={"/Bookings"}
+                  currentPath={pathname}
+                />
               <SidebarLink
                 Icon={AiOutlineCar}
                 title={"Parking Slots"}
@@ -147,12 +153,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 Icon={PiChartLineUpBold}
                 title={"Reports"}
                 href={"/reports"}
-                currentPath={pathname}
-              />
-              <SidebarLink
-                Icon={BsFillPeopleFill}
-                title={"People"}
-                href={"/peoples"}
                 currentPath={pathname}
               />
               {/* <SidebarLink Icon={FiLogOut} title={"Logout"} href={"/"} currentPath={pathname}  /> */}

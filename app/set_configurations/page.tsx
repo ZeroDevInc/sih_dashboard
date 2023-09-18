@@ -129,10 +129,6 @@ const page = () => {
         </form>
       </div>
 
-      <div className="flex flex-col gap-10 mt-4">
-        <TableTwo />
-      </div>
-
     </>
   );
 };
