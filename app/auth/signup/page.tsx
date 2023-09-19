@@ -1,17 +1,16 @@
 "use client";
+// import { useRouter } from 'next/navigation';
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { useState } from "react";
-// import { Metadata } from "next";
-// export const metadata: Metadata = {
-//   title: "Signup Page | Next.js E-commerce Dashboard Template",
-//   description: "This is Signup page for TailAdmin Next.js",
-//   // other metadata
-// };
+import { useRouter } from "next/navigation";
 
 const SignUp: React.FC = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,6 +25,7 @@ const SignUp: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
+    router.push("/");
   };
 
   return (

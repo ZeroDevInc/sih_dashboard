@@ -126,12 +126,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 href={"/dashboard"}
                 currentPath={pathname}
               />
-              <SidebarLink
+              {/* <SidebarLink
                 Icon={RxDashboard}
                 title={"Profile"}
                 href={"/profile"}
                 currentPath={pathname}
-              />
+              /> */}
               <SidebarLink
                 Icon={AiOutlineForm}
                 title={"Set Configuration"}

@@ -44,36 +44,44 @@ const VechicleData: VECHICLES[] = [
 const data = [
     {
         Person_name: "Shreyansh",
-        vechicle_no: "HR0101",
+        vechicle_no: "HR0976",
         slot_book_no: 2,
-        Booking_Time:"12:11",
-        end_Time: "13.11",
+        Booking_Time:"13.11",
+        end_Time: "15.16",
         amount_paid: 123,
     },
     {
-        Person_name: "Shreyansh",
-        vechicle_no: "HR0101",
+        Person_name: "Gopal",
+        vechicle_no: "HR0123",
         slot_book_no: 2,
-        Booking_Time:"12:11",
-        end_Time: "13.11",
-        amount_paid: 123,
+        Booking_Time:"14.12",
+        end_Time: "16.17",
+        amount_paid: 90,
     },
     {
-        Person_name: "Shreyansh",
-        vechicle_no: "HR0101",
+        Person_name: "Chaitanya",
+        vechicle_no: "HR9896",
         slot_book_no: 2,
-        Booking_Time:"12:11",
-        end_Time: "13.11",
-        amount_paid: 123,
+        Booking_Time:"16.09",
+        end_Time: "18.19",
+        amount_paid: 400,
     },
     {
-        Person_name: "Shreyansh",
-        vechicle_no: "HR0101",
+        Person_name: "Mansi",
+        vechicle_no: "HR0808",
         slot_book_no: 2,
-        Booking_Time:"12:11",
-        end_Time: "13.11",
-        amount_paid: 123,
-    }
+        Booking_Time:"17.11",
+        end_Time: "18.12",
+        amount_paid: 320,
+    },
+    {
+      Person_name: "Hriday",
+      vechicle_no: "HR1212",
+      slot_book_no: 2,
+      Booking_Time:"19:11",
+      end_Time: "21.14",
+      amount_paid: 112,
+  }
 ];
 
 const People = () => {

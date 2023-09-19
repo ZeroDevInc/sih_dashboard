@@ -30,16 +30,16 @@ const Dashboard: React.FC = () => {
     {
       imageSrc: CarImg,
       type: "Car",
-      price: 130,
-      Max_Slots: 25,
-      Available_Slots: 13 
+      price: 190,
+      Max_Slots: 17,
+      Available_Slots: 2 
     },
     {
       imageSrc: TruckImg,
       type: "Truck",
-      price: 130,
-      Max_Slots: 25,
-      Available_Slots: 13 
+      price: 400,
+      Max_Slots: 4,
+      Available_Slots: 3 
     }
   ]
 

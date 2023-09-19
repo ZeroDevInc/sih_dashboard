@@ -4,14 +4,21 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { useState } from "react";
-// import { Metadata } from "next";
-// export const metadata: Metadata = {
-//   title: "Signin Page | Next.js E-commerce Dashboard Template",
-//   description: "This is Signin page for TailAdmin Next.js",
-//   // other metadata
-// };
+import { useRouter } from "next/navigation";
+
+// import app from "../firebase";
+
+// import {getAuth,signInWithEmailAndPassword} from "firebase/auth";
+
+// const auth = getAuth();
+
+const BASE_URI =  'https://sihdashboardapi-chaitanyakanhar2004.b4a.run/'
+
 
 const SignIn: React.FC = () => {
+
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,7 +32,35 @@ const SignIn: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
+    
+    const email = formData.email;
+    const password = formData.password;
+
+    router.push('/');
+
+    // signInWithEmailAndPassword(auth,email,password)
+    //  .then(async (userCredential) => {
+    //     const data = {
+    //         token: userCredential.user.accessToken;
+    //     }
+    //     const res = await fetch(`${BASE_URI}/login/`, {
+    //         method: 'POST',
+    //         headers: {
+    //         'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(data)  
+    //     });
+    //     const jsonData = await res.json();
+    //     console.log(jsonData);
+    //     router.push('/')
+    //   })
+    //   .catch((error) => {
+    //       const errorCode = error.code;
+    //       const errorMessage = error.message;
+    //       console.log(errorMessage);
+    //   });
   };
+
   return (
     <>
       <Breadcrumb pageName="Sign In" />
@@ -321,6 +356,7 @@ const SignIn: React.FC = () => {
       </div>
     </>
   );
+  
 };
 
 export default SignIn;
