@@ -7,6 +7,7 @@ import SidebarLink from "../SidebarLink";
 
 import { RxDashboard } from "react-icons/rx";
 import { BiSolidParking } from "react-icons/bi";
+import {CiUser} from "react-icons/ci"
 import { GrConfigure } from "react-icons/gr";
 import { PiChartLineUpBold } from "react-icons/pi";
 import { BsFillPeopleFill } from "react-icons/bs";
@@ -126,21 +127,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 currentPath={pathname}
               />
               <SidebarLink
+                Icon={RxDashboard}
+                title={"Profile"}
+                href={"/profile"}
+                currentPath={pathname}
+              />
+              <SidebarLink
                 Icon={AiOutlineForm}
                 title={"Set Configuration"}
                 href={"/set_configurations"}
-                currentPath={pathname}
-              />
-                <SidebarLink
-                  Icon={BsFillPeopleFill}
-                  title={"Bookings"}
-                  href={"/Bookings"}
-                  currentPath={pathname}
-                />
-              <SidebarLink
-                Icon={AiOutlineCar}
-                title={"Parking Slots"}
-                href={"/parking-slots"}
                 currentPath={pathname}
               />
               <SidebarLink
