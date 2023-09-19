@@ -117,7 +117,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <SidebarLink
                 Icon={MdLiveTv}
                 title={"Live"}
-                href={"/"}
+                href={"/live"}
                 currentPath={pathname}
               />
               <SidebarLink
