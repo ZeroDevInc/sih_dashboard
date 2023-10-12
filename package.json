@@ -30,6 +30,7 @@
     "react-icons": "^4.11.0",
     "react-jvectormap": "^0.0.16",
     "react-player": "^2.13.0",
+    "swr": "^2.2.4",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   }
