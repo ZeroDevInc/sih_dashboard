@@ -2,7 +2,7 @@ import React from "react";
 import CardDataStats from "../../components/CardDataStats";
 import Image from "next/image";
 
-import useSWR from "swr";
+// import useSWR from "swr";
 
 import dynamic from "next/dynamic";
 const MapOne = dynamic(() => import("../../components/Maps/MapOne"), {

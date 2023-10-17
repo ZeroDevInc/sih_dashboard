@@ -18,12 +18,15 @@ import { MdLiveTv } from "react-icons/md";
 import { RiCreativeCommonsZeroFill } from "react-icons/ri";
 import { FcOrgUnit } from "react-icons/fc";
 
+import { signOut } from "next-auth/react";
+
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+
   const pathname = usePathname();
 
   const trigger = useRef<any>(null);
@@ -154,6 +157,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <div
                   className={`group hover:cursor-pointer relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4`}
+                  onClick={() => {signOut();}}
                 >
                   <FiLogOut />
                   Logout

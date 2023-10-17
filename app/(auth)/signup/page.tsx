@@ -20,10 +20,26 @@ const SignUp: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(JSON.stringify(formData));
-    router.push("/auth/signin");
+    const email = formData.email;
+    const password = formData.password;
+    const username = formData.name;
+
+    try{
+      const res = await fetch("/api/signup", {
+        method: "POST",
+        body: JSON.stringify({email, password, username}),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      console.log(data);
+      router.push("/signin");
+    }catch(err){
+      console.log(err);
+    }
   };
   
   return (
@@ -250,7 +266,7 @@ const SignUp: React.FC = () => {
                 <p>
                   Already have an account?{" "}
                   <Link
-                    href="/auth/signin"
+                    href="/signin"
                     className="text-primary"
                   >
                     Sign in

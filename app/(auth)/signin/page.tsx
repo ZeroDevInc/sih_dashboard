@@ -2,19 +2,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import {signIn} from "next-auth/react"
 
-// import app from "../firebase";
-
-// import {getAuth,signInWithEmailAndPassword} from "firebase/auth";
-
-// const auth = getAuth();
 
 // const BASE_URI =  'https://sihdashboardapi-chaitanyakanhar2004.b4a.run/'
-
 
 const SignIn: React.FC = () => {
 
@@ -30,40 +24,28 @@ const SignIn: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-    
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();    
     const email = formData.email;
     const password = formData.password;
 
-    router.push('/');
-    // signInWithEmailAndPassword(auth,email,password)
-    //  .then(async (userCredential) => {
-    //     const data = {
-    //         token: userCredential.user.accessToken;
-    //     }
-    //     const res = await fetch(`${BASE_URI}/login/`, {
-    //         method: 'POST',
-    //         headers: {
-    //         'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(data)  
-    //     });
-    //     const jsonData = await res.json();
-    //     console.log(jsonData);
-    //     router.push('/')
-    //   })
-    //   .catch((error) => {
-    //       const errorCode = error.code;
-    //       const errorMessage = error.message;
-    //       console.log(errorMessage);
-    //   });
+    try {
+      const res = await signIn("credentials", {email, password, redirect: false});
+      console.log("my response ------ ",res);
+      if(res.error){
+        console.log({"error in signin":res.error});
+        return;
+      }
+      router.push('/');
+    }
+    catch(err) {
+      console.log(err);
+    }
   };
 
   return (
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-        <div className="flex flex-wrap items-center">
+        <div className="flex flex-wrap items-center h-screen">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
               <span className="mt-15 inline-block">
@@ -160,7 +142,7 @@ const SignIn: React.FC = () => {
                     Sign In
                   </button>
                 </div>
-
+{/* 
                 <button
                   type="submit"
                   className="flex w-full items-center justify-center gap-3.5 rounded-lg border border-stroke bg-gray p-4 hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50"
@@ -199,13 +181,13 @@ const SignIn: React.FC = () => {
                     </svg>
                   </span>
                   Sign in with Google
-                </button>
+                </button> */}
 
                 <div className="mt-6 text-center">
                   <p>
                     Don’t have any account?{" "}
                     <Link
-                      href="/auth/signup"
+                      href="/signup"
                       className="text-primary"
                     >
                       Sign Up
